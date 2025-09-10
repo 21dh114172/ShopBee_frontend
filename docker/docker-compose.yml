@@ -1,0 +1,16 @@
+name: ShopBee-frontend
+services:
+  buyer:
+    container_name: 'buyer'
+    build:
+      context: ../
+      dockerfile: ./docker/Dockerfile
+    restart: always
+    networks:
+      - ShopBee-frontend
+    ports:
+      - 3000:3000
+
+networks:
+  ShopBee-frontend:
+    driver: bridge

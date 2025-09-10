@@ -1,0 +1,20 @@
+{
+  "name": "ShopBee_frontend",
+  "private": true,
+  "scripts": {
+    "dev:buyer": "pnpm -F @shopbee/buyer dev",
+    "dev:seller": "pnpm -F @shopbee/seller dev",
+    "dev:admin": "pnpm -F @shopbee/admin dev",
+    "dev:all": "concurrently \"pnpm -F @shopbee/buyer dev\" \"pnpm -F @shopbee/seller dev\" \"pnpm -F @shopbee/admin dev\"",
+    "dev": "turbo run dev --parallel",
+    "build": "turbo run build --parallel"
+  },
+  "devDependencies": {
+    "concurrently": "^8.0.0",
+    "cross-var": "^1.1.0",
+    "dotenv-cli": "^10.0.0",
+    "rimraf": "^5.0.0",
+    "turbo": "^2.0.0",
+    "typescript": "^5.0.0"
+  }
+}
