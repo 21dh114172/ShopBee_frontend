@@ -12,10 +12,10 @@
     "next": "15.5.2",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "@shopbee/components": "workspace:*",
-    "@shopbee/services": "workspace:*",
-    "@shopbee/types": "workspace:*",
-    "@shopbee/utils": "workspace:*"
+    "@shopbee/components": "0.1.0",
+    "@shopbee/services": "0.1.0",
+    "@shopbee/types": "0.1.0",
+    "@shopbee/utils": "0.1.0"
   },
   "devDependencies": {
     "typescript": "^5.0.0",

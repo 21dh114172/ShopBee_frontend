@@ -1,15 +1,31 @@
 name: ShopBee-frontend
 services:
-  buyer:
-    container_name: 'buyer'
+  admin:
     build:
-      context: ../
-      dockerfile: ./docker/Dockerfile
-    restart: always
-    networks:
-      - ShopBee-frontend
+      context: ..
+      dockerfile: ./docker/Dockerfile.admin
     ports:
-      - 3000:3000
+      - "3002:3000"
+    environment:
+      - NODE_ENV=production
+
+  buyer:
+    build:
+      context: ..
+      dockerfile: ./docker/Dockerfile.buyer
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+
+  seller:
+    build:
+      context: ..
+      dockerfile: ./docker/Dockerfile.seller
+    ports:
+      - "3001:3000"
+    environment:
+      - NODE_ENV=production
 
 networks:
   ShopBee-frontend:

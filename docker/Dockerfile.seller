@@ -1,0 +1,29 @@
+ARG NODE_VERSION=20
+ARG ALPINE_VERSION=3.21
+
+FROM node:${NODE_VERSION}-alpine${ALPINE_VERSION} AS builder
+
+WORKDIR /app
+
+COPY package.json turbo.json ./
+COPY apps/seller/package.json ./apps/seller/
+COPY packages ./packages
+COPY apps/seller ./apps/seller
+
+RUN npm install
+RUN npm run build --workspace=@shopbee/seller
+
+FROM node:${NODE_VERSION}-alpine${ALPINE_VERSION} AS runner
+
+WORKDIR /app
+
+ENV NODE_ENV=production
+ENV PORT=3000
+
+COPY --from=builder /app/apps/seller/.next/standalone ./
+COPY --from=builder /app/apps/seller/.next/static ./.next/static
+COPY --from=builder /app/apps/seller/public ./public
+
+EXPOSE 3000
+
+CMD ["node", "apps/seller/server.js"]

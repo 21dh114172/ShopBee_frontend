@@ -1,11 +1,15 @@
 {
   "name": "ShopBee_frontend",
   "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "scripts": {
-    "dev:buyer": "pnpm -F @shopbee/buyer dev",
-    "dev:seller": "pnpm -F @shopbee/seller dev",
-    "dev:admin": "pnpm -F @shopbee/admin dev",
-    "dev:all": "concurrently \"pnpm -F @shopbee/buyer dev\" \"pnpm -F @shopbee/seller dev\" \"pnpm -F @shopbee/admin dev\"",
+    "dev:buyer": "npm run dev --workspace=@shopbee/buyer",
+    "dev:seller": "npm run dev --workspace=@shopbee/seller",
+    "dev:admin": "npm run dev --workspace=@shopbee/admin",
+    "dev:all": "concurrently \"npm run dev:buyer\" \"npm run dev:seller\" \"npm run dev:admin\"",
     "dev": "turbo run dev --parallel",
     "build": "turbo run build --parallel"
   },
