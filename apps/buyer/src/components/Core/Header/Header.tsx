@@ -1,11 +1,9 @@
 "use client";
-
-// import { FaSearch, FaShoppingCart } from 'react-icons/fa'
 import Image from "next/image";
 
 const quickLinks = [
   "Quạt Cầm Tay",
-  "Dép",
+  "Dép", 
   "Áo Khoác Hoodie Zip Dày",
   "Sale 1k Điện Thoại iPhone",
   "Romand Juicy 24",
@@ -15,48 +13,50 @@ const quickLinks = [
 
 export default function Header() {
   return (
-    <div className="bg-gradient-to-r from-[#f53d2d] to-[#f63] text-white">
-      {/* Middle nav - Logo + Search + Cart */}
-      <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-        {/* Logo */}
-        <div className="flex items-center">
-          <Image
-            src="/logo/shopbee_logo.svg"
-            alt="Shopee Logo"
-            width={40}
-            height={40}
-          />
-          <span className="text-[36px] text-white">ShopBee</span>
-        </div>
-
-        {/* Search bar */}
-        <div className="flex-1 mx-8">
-          <div className="relative">
-            <input
-              type="text"
-              placeholder="Shopee bao ship 0Đ - Đăng ký ngay!"
-              className="w-full h-10 rounded-sm px-4 pr-12 text-black text-sm outline-none"
+    <div className="bg-gradient-to-r from-[#f53d2d] to-[#f63] text-white w-full">
+      <div className="container-responsive">
+        <div className="px-4 py-4 flex items-center justify-between">
+          {/* Logo */}
+          <div className="flex items-center">
+            <Image
+              src="/logo/shopbee_logo.svg"
+              alt="Shopee Logo"
+              width={40}
+              height={40}
             />
-            <button className="absolute top-1 right-1 bg-[#fb5533] hover:bg-[#ec381d] text-white px-3 py-2 rounded-sm">
-              {/* <FaSearch size={14} /> */}
-            </button>
+            <span className="text-[36px] !text-white ml-2">ShopBee</span>
           </div>
 
-          {/* Quick links */}
-          <div className="text-xs mt-1 flex flex-wrap gap-3 text-white/90">
-            {quickLinks.map((text, idx) => (
-              <a key={idx} href="#" className="hover:underline">
-                {text}
-              </a>
-            ))}
+          {/* Search Bar */}
+          <div className="flex-1 mx-8">
+            <div className="bg-white rounded flex items-center">
+              <input 
+                type="text"
+                placeholder="Tìm kiếm sản phẩm..."
+                className="flex-1 px-4 py-3 text-gray-700 outline-none rounded-l"
+              />
+              <button className="bg-[#fb5533] px-6 py-3 rounded-r">
+                <span className="text-white">🔍</span>
+              </button>
+            </div>
+            
+            {/* Quick Links */}
+            <div className="flex flex-wrap gap-2 mt-2 text-sm">
+              {quickLinks.map((link, i) => (
+                <span key={i} className="hover:underline cursor-pointer">
+                  {link}
+                </span>
+              ))}
+            </div>
           </div>
-        </div>
 
-        {/* Cart */}
-        <div>
-          <a href="#" className="text-white text-xl">
-            {/* <FaShoppingCart /> */}
-          </a>
+          {/* Cart & User */}
+          <div className="flex items-center space-x-6">
+            <div className="text-center cursor-pointer">
+              <span className="text-2xl">🛒</span>
+              <div className="text-xs">Giỏ hàng</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

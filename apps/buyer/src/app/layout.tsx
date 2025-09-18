@@ -13,7 +13,7 @@ export default function RootLayout({
       <body>
         <Navbar />
         <Header />
-        <div>{children}</div>
+        <div className="container-responsive">{children}</div>
         <Footer />
       </body>
     </html>

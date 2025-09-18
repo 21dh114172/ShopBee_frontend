@@ -1,6 +1,25 @@
 @import "tailwindcss/preflight";
 @import "tailwindcss/utilities";
 
+/* Container responsive tùy chỉnh */
+.container-responsive {
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media (min-width: 1260px) {
+  .container-responsive {
+    width: calc(1260px - 60px);
+  }
+}
+
+@media (min-width: 1920px) {
+  .container-responsive {
+    width: calc(1920px - 60px);
+  }
+}
+
+/* Các utility khác */
 .scroll-hidden::-webkit-scrollbar {
   display: none;
 }
@@ -10,14 +29,3 @@
   scrollbar-width: none;
 }
 
-@media (min-width: 1260px) {
-  .custom-laptop-width {
-    width: calc(1260px - 60px);
-  }
-}
-
-@media (min-width: 1920px) {
-  .custom-desktop-width {
-    width: calc(1920px - 60px);
-  }
-}
