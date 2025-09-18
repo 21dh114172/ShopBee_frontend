@@ -1,0 +1,19 @@
+{
+  "name": "@shopbee/config-tailwind",
+  "version": "1.0.0",
+  "description": "Shared Tailwind CSS config for ShopBee apps",
+  "main": "tailwind.config.js",
+  "files": [
+    "tailwind.config.js",
+    "global.css"
+  ],
+  "keywords": ["tailwindcss", "config"],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.13",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.13"
+  }
+}

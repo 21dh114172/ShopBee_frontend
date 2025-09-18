@@ -9,3 +9,15 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+@media (min-width: 1260px) {
+  .custom-laptop-width {
+    width: calc(1260px - 60px);
+  }
+}
+
+@media (min-width: 1920px) {
+  .custom-desktop-width {
+    width: calc(1920px - 60px);
+  }
+}

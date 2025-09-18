@@ -14,11 +14,21 @@
     "build": "turbo run build --parallel"
   },
   "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.13",
+    "autoprefixer": "^10.4.21",
     "concurrently": "^8.0.0",
     "cross-var": "^1.1.0",
     "dotenv-cli": "^10.0.0",
+    "postcss": "^8.5.6",
     "rimraf": "^5.0.0",
+    "tailwindcss": "^4.1.13",
     "turbo": "^2.0.0",
     "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@types/react-router-dom": "^5.3.3",
+    "framer-motion": "^12.23.12",
+    "react-responsive-carousel": "^3.2.23",
+    "react-router-dom": "^7.9.1"
   }
 }
