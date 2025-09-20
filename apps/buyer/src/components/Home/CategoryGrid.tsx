@@ -19,7 +19,7 @@ const categories = [
   { alt: "Sức Khỏe", src: "/home/category/suckhoe.png" },
   { alt: "Giày Dép Nữ", src: "/home/category/giaydepnu.png" },
   { alt: "Túi Ví Nữ", src: "/home/category/tuivinu.png" },
-  { alt: "Trang Sức", src: "/home/category/trangsuc.png" },
+  { alt: "Trang Sức", src: "/home/category/trangsucnu.png" },
   { alt: "Bách Hóa Online", src: "/home/category/bachhoaonline.png" },
   { alt: "Nhà Sách Online", src: "/home/category/nhasachonline.png" },
   { alt: "Balo & Túi ví nam", src: "/home/category/balo.png" },

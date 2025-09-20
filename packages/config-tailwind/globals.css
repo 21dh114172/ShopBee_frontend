@@ -1,5 +1,4 @@
-@import "tailwindcss/preflight";
-@import "tailwindcss/utilities";
+@import "tailwindcss";
 
 /* Container responsive tùy chỉnh */
 .container-responsive {
@@ -15,7 +14,7 @@
 
 @media (min-width: 1920px) {
   .container-responsive {
-    width: calc(1920px - 60px);
+    width: calc(1920px - 492px);
   }
 }
 
@@ -29,3 +28,6 @@
   scrollbar-width: none;
 }
 
+.white-icon {
+  filter: brightness(0) invert(1);
+}

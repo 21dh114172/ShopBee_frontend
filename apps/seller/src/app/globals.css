@@ -1,11 +1,2 @@
-@import "tailwindcss/preflight";
-@import "tailwindcss/utilities";
-
-.scroll-hidden::-webkit-scrollbar {
-  display: none;
-}
-
-.scroll-hidden {
-  -ms-overflow-style: none;
-  scrollbar-width: none; 
-}
+@import "tailwindcss";
+@import "../../../../packages/config-tailwind/globals.css";

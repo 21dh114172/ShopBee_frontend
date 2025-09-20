@@ -29,7 +29,7 @@ export default function Banner() {
             alt="Sub Banner 2"
             width={400}
             height={115}
-            className="w-full h-auto rounded object-cover"
+            className="w-full h-auto rounded object-cover p"
           />
         </div>
       </div>
