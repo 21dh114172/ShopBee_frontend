@@ -1,0 +1,32 @@
+name: ShopBee-frontend
+services:
+  admin:
+    build:
+      context: ..
+      dockerfile: ./docker/Dockerfile.admin
+    ports:
+      - "3002:3002"
+    environment:
+      - NODE_ENV=production
+
+  buyer:
+    build:
+      context: ..
+      dockerfile: ./docker/Dockerfile.buyer
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+
+  seller:
+    build:
+      context: ..
+      dockerfile: ./docker/Dockerfile.seller
+    ports:
+      - "3001:3001"
+    environment:
+      - NODE_ENV=production
+
+networks:
+  ShopBee-frontend:
+    driver: bridge

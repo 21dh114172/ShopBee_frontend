@@ -1,0 +1,29 @@
+ARG NODE_VERSION=20
+ARG ALPINE_VERSION=3.21
+
+FROM node:${NODE_VERSION}-alpine${ALPINE_VERSION} AS builder
+
+WORKDIR /app
+
+COPY package.json turbo.json ./
+COPY apps/buyer/package.json ./apps/buyer/
+COPY packages ./packages
+COPY apps/buyer ./apps/buyer
+
+RUN npm install
+RUN npm run build
+
+FROM node:${NODE_VERSION}-alpine${ALPINE_VERSION} AS runner
+
+WORKDIR /app
+
+ENV NODE_ENV=production
+ENV PORT=3000
+
+COPY --from=builder --chown=nextjs:nodejs /app/apps/buyer/public ./apps/buyer/public
+COPY --from=builder --chown=nextjs:nodejs /app/apps/buyer/.next/standalone ./
+COPY --from=builder --chown=nextjs:nodejs /app/apps/buyer/.next/static ./apps/buyer/.next/static
+
+EXPOSE 3000
+
+CMD ["node", "apps/buyer/server.js"]
