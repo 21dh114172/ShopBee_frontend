@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 type Props = {
   imageUrl: string;
@@ -65,19 +66,19 @@ export default function PromoPopup({
   if (!open || pathname !== "/") return null;
 
   return (
-    <div className="fixed inset-0 z-[1000] flex items-center justify-center bg-black/60">
+    <div className="fixed inset-0 z-[1000] flex items-center justify-center bg-[#00000066]">
       <div className="absolute inset-0" onClick={() => setOpen(false)} />
       <div
         role="dialog"
         aria-modal="true"
-        className={`relative rounded-2xl bg-white shadow-2xl ${widthClass} animate-in fade-in zoom-in-95 duration-200`}
+        className={`relative rounded-2xl ${widthClass} animate-in fade-in zoom-in-95 duration-200`}
       >
         <button
           onClick={() => setOpen(false)}
-          className="absolute right-2 top-2 rounded-full bg-black/60 p-1 text-white hover:bg-black/80"
+          className="absolute -right-2 -top-2 rounded-full p-[7px] bg-gray-100"
           aria-label="Đóng"
         >
-          ✕
+          <Image src="/home/x.svg" width={16} height={16} alt="x" />
         </button>
 
         <img

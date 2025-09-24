@@ -1,9 +1,9 @@
 // apps/buyer/src/components/home/Navbar.tsx
 "use client";
 import Image from "next/image";
-import NotificationDropdown from "./NotificationDropdown";
-import AppDownloadDropdown from "./AppDownloadDropdown";
-import LanguageDropdown from "./LanguageDropdown";
+import NotificationDropdown from "./PopupHeader/NotificationDropdown";
+import AppDownloadDropdown from "./PopupHeader/AppDownloadDropdown";
+import LanguageDropdown from "./PopupHeader/LanguageDropdown";
 
 export default function Navbar() {
   return (

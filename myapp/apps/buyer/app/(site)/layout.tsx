@@ -1,7 +1,8 @@
 import Footer from "../../components/Core/Footer/Footer";
 import Header from "../../components/Core/Header/Header";
+import Banner from "../../components/Home/Banner";
 import PromoPopup from "../../components/Home/PromoPopup";
-
+import ShortcutMenu from "../../components/Home/ShortcutMenu";
 
 export default function SiteLayout({
   children,
@@ -12,11 +13,15 @@ export default function SiteLayout({
     <>
       <Header />
       <PromoPopup
-        imageUrl="/images/promo-elmich.jpg"
+        imageUrl="/home/image_popup.png"
         ctaHref="/collections/hot-sale"
-        widthClass="w-[740px] max-w-[92vw]"
+        widthClass="h-full w-[438px]"
       />
-      <div className="container-responsive">{children}</div>
+      <Banner />
+      <ShortcutMenu />
+      <div className="bg-util-bg pt-2.5">
+        <div className="container-responsive">{children}</div>
+      </div>
       <Footer />
     </>
   );

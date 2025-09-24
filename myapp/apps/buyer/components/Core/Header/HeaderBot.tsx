@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import CartDropdown from "./CartDropdown";
+import CartDropdown from "./PopupHeader/CartDropdown";
 
 const quickLinks = [
   "Quạt Cầm Tay",
